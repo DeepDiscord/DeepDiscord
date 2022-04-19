@@ -15,8 +15,10 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('https://discord.gg') or message.content.startswith('https://discord.com/invite/'):
+    if message.content.startswith('https://discord.gg') or message.content.startswith('https://discord.com/invite/') and message.content != "https://discord.gg":
         print("Sniffed invite: " + message.content)
+        with open("database.txt", "a") as myfile: # something nice about python is it creates the file if it doesn't exsist
+            myfile.write(message.content)
 
 t = os.getenv("TOKEN")
 client.run(t)
