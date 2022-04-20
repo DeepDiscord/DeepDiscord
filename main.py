@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request, jsonify
 import sys
+import os
+from dotenv import load_dotenv
+
+load_dotenv('bot/.env.txt')
 
 app = Flask(__name__)
 
