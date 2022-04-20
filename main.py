@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 import sys
+import json
 import os
 from dotenv import load_dotenv
 
@@ -37,7 +38,7 @@ def api():
 def api_db():
     f = open("bot/database.txt","r")
     lines = f.readlines()
-    return str(lines)
+    return Response(json.dumps(str(lines)), mimetype='application/json')
 
 if __name__ == "__main__":
     app.run(port=port,host='0.0.0.0')
