@@ -9,7 +9,7 @@ def home():
 @app.route("/api/submit", methods=['POST'])
 def api():
     api = request.json
-    print(api)
+    print(jsonify(api))
     return "OK"
 
 if __name__ == "__main__":
