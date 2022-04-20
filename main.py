@@ -37,7 +37,7 @@ def api():
 def api_db():
     f = open("bot/database.txt","r")
     lines = f.readlines()
-    return lines
+    return str(lines)
 
 if __name__ == "__main__":
     app.run(port=port,host='0.0.0.0')
