@@ -17,7 +17,7 @@ def api():
         return "Bad Request"
 
 @app.route("/api/db")
-def api():
+def api_db():
     return "Working on this"
 
 if __name__ == "__main__":
