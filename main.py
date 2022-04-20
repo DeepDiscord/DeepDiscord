@@ -44,7 +44,7 @@ def api_db():
 def stats():
     f = open("bot/database.txt","r")
     lines = f.readlines()
-    number = count(lines)
+    number = len(lines)
     return render_template("stats.html", indexed = number)
     
 
