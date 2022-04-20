@@ -11,6 +11,7 @@ app = Flask(__name__)
 # Note to self, take this out before production
 
 keys = ["abc123", "000webhostSUCKS"]
+port = os.getenv("PORT")
 
 @app.route("/")
 def home():
@@ -37,4 +38,4 @@ def api_db():
     return "Working on this"
 
 if __name__ == "__main__":
-    app.run(port=4001,host='0.0.0.0')
+    app.run(port=port,host='0.0.0.0')
