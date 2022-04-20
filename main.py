@@ -40,5 +40,13 @@ def api_db():
     lines = f.readlines()
     return Response(json.dumps(str(lines)), mimetype='application/json')
 
+@app.route("/stats")
+def stats():
+    f = open("bot/database.txt","r")
+    lines = f.readlines()
+    number = count(lines)
+    return render_template("stats.html", indexed = number)
+    
+
 if __name__ == "__main__":
     app.run(port=port,host='0.0.0.0')
