@@ -47,6 +47,16 @@ def stats():
     number = len(lines)
     return render_template("stats.html", indexed = number)
     
+@app.route("/search", methods=['GET'])
+def search():
+    db = open('bot/database.txt', 'r')
+    l = db.readlines()
+    
+    results = []
+
+    for line in l:
+        print(line)
+    return "Check the console for more info"
 
 if __name__ == "__main__":
     app.run(port=port,host='0.0.0.0')
