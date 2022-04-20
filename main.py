@@ -35,7 +35,9 @@ def api():
 
 @app.route("/api/db")
 def api_db():
-    return "Working on this"
+    f = open("bot/database.txt","r")
+    lines = f.readlines()
+    return lines
 
 if __name__ == "__main__":
     app.run(port=port,host='0.0.0.0')
