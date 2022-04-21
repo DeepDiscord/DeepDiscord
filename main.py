@@ -54,8 +54,14 @@ def search():
     
     results = []
 
+    try:
+        search = request.args.get('q')
+    except:
+        return "Bad Request"
+
     for line in l:
-        print(line)
+        if search in line:
+            print(line)
     return "Check the console for more info"
 
 if __name__ == "__main__":
