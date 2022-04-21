@@ -1,0 +1,11 @@
+{% include 'header.html' %}
+<body>
+  <h1>DeepDiscord</h1>
+  <h3>Search Results</h3>
+  <p>
+    {% for result in results %}
+      {{ result }} <br>
+    {% endfor %}
+  </p>
+</body>
+{% include 'footer.html' %}

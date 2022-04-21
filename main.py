@@ -60,9 +60,9 @@ def search():
         return "Bad Request"
 
     for line in l:
-        if search in line:
-            print(line)
-    return "Check the console for more info"
+        if search in line and line != "":
+            results.append(line.strip())
+    return render_template("results.html", results = results)
 
 if __name__ == "__main__":
     app.run(port=port,host='0.0.0.0')
