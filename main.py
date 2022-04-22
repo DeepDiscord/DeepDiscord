@@ -74,7 +74,10 @@ def search():
 
     for line in l:
         if search in line and line != "":
-            results.append(line.strip())
+            pre = line.strip()
+            pre1 = pre.strip("https://discord.gg/")
+            pre2 = pre1.strip("https://discord.com/invite/")
+            results.append(pre2)
     return render_template("results.html", results = results)
 
 if __name__ == "__main__":
