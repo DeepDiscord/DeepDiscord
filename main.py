@@ -3,6 +3,7 @@ import sys
 import json
 import os
 from dotenv import load_dotenv
+import requests
 
 load_dotenv('bot/.env.txt')
 
@@ -39,6 +40,18 @@ def api_db():
     f = open("bot/database.txt","r")
     lines = f.readlines()
     return Response(json.dumps(str(lines)), mimetype='application/json')
+
+@app.route("/api/invite/<invite>")
+def invite(invite):
+    http = requests.get("https://discord.com/api/v9/invites/" + invite + "?with_counts=true&with_expiration=true")
+    try:
+        name = http.json()["guild"]["name"]
+        count = http.json()["approximate_member_count"]
+        nsfw = http.json()["guild"]["nsfw"]
+        pre_baked_json = {"name": name, "members": count, "isNSFW": nsfw} # add icon for guild/server in a future update
+        return Response(json.dumps(pre_baked_json), mimetype='application/json')
+    except:
+        return Response(json.dumps({"error": "true", "http": http.status_code}), mimetype='application/json')
 
 @app.route("/stats")
 def stats():
