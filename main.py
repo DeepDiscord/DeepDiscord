@@ -20,7 +20,8 @@ port = os.getenv("PORT")
 @app.route("/")
 def home():
     if os.getenv("PRODUCTION") == "false":
-        return render_template("preview.html")
+        email = os.getenv("EMAIL")
+        return render_template("preview.html", email=email)
     else:
         return render_template("index.html")
 

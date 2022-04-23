@@ -12,6 +12,7 @@ Create a new .env.txt file in `bot/` by running `cp env.txt.example env.txt`. Ed
 * SITE_URL - Domain of the website (example.com)
 * PROTO - https or http, whichever one you use
 * KEYS - API keys in JSON form (ex. `{"key1", "key2"}`)
+* EMAIL - Your email (for contacts)
 
 ## Notes
 
