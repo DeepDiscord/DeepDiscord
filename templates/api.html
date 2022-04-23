@@ -6,7 +6,7 @@
     <h4>POST /api/submit</h4>
     <p>Submit an invite. Requires a key and invite. Invite must be either in the form of <code>https://discord.gg/ID</code> or <code>https://discord.com/invite/ID</code></p>
     <pre>
-        curl --data-raw
+        curl --data-raw "{'token': 'your_token_here', 'url': 'your_invite_url_here'}" -H "Content-type: application/json" {{ full_domain }}
     </pre>
 </body>
 {% include 'footer.html' %}

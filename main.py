@@ -42,7 +42,9 @@ def api():
 
 @app.route("/api")
 def api_docs():
-    return
+    domain = os.getenv("DOMAIN")
+    full_domain = os.getenv("PROTO") + "://" + os.getenv("DOMAIN")
+    return render_template("api.html", domain=domain, full_domain=full_domain)
 
 @app.route("/api/db")
 def api_db():
