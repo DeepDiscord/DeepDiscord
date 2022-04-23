@@ -14,7 +14,7 @@ app = Flask(__name__)
 # For testing, this is a fake database of valid auth tokens
 # Note to self, take this out before production
 
-keys = ["abc123", "000webhostSUCKS"]
+keys = os.getenv("KEYS")
 port = os.getenv("PORT")
 
 @app.route("/")
