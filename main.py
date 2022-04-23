@@ -66,6 +66,7 @@ def search():
     l = db.readlines()
     
     results = []
+    results_raw = []
 
     try:
         search = request.args.get('q')
@@ -77,8 +78,9 @@ def search():
             pre = line.strip()
             pre1 = pre.strip("https://discord.gg/")
             pre2 = pre1.strip("https://discord.com/invite/")
-            results.append(pre2)
-    return render_template("results.html", results = results)
+            results_raw.append(pre2)
+            results.append(line.strip())
+    return render_template("results.html", results = results, results_raw = results_raw)
 
 if __name__ == "__main__":
     app.run(port=port,host='0.0.0.0')

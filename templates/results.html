@@ -1,10 +1,16 @@
 {% include 'header.html' %}
+<script src="{{ url_for('static', filename='ajax.js') }}"></script>
 <body>
   <h1>DeepDiscord</h1>
   <h3>Search Results</h3>
   <p>
     {% for result in results %}
       {{ result }} <br>
+    {% endfor %}
+    {% for result_raw in results_raw %}
+      <script>
+        search("{{ result_raw }}");
+      </script>
     {% endfor %}
   </p>
 </body>
