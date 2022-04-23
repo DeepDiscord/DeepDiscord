@@ -4,7 +4,15 @@
   <h1>DeepDiscord</h1>
   <h3>Search Results</h3>
     {% set iteration = 0 %}
+    <!--
 
+      The problem here is that the iteration variable is not
+      increasing, even though it should increase by 1 for each
+      iteration.
+
+      I've asked a question about this on Stackoverflow.
+      https://stackoverflow.com/q/71976299
+    -->
     {% for result in results %}
       <p id="{{ results_raw[iteration] }}">{{ result }}</p> <br>
       {% set iteration = iteration + 1 %}
