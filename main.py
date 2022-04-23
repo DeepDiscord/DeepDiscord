@@ -40,6 +40,10 @@ def api():
     except:
         return "Bad Request, check your post data"
 
+@app.route("/api")
+def api_docs():
+    return
+
 @app.route("/api/db")
 def api_db():
     f = open("bot/database.txt","r")
