@@ -3,15 +3,17 @@
 <body>
   <h1>DeepDiscord</h1>
   <h3>Search Results</h3>
-  <p>
+    {% set iteration = 0 %}
+
     {% for result in results %}
-      {{ result }} <br>
+      <p id="{{ results_raw[iteration] }}">{{ result }}</p> <br>
+      {% set iteration = iteration + 1 %}
     {% endfor %}
+
     {% for result_raw in results_raw %}
       <script>
         search("{{ result_raw }}");
       </script>
     {% endfor %}
-  </p>
 </body>
 {% include 'footer.html' %}
