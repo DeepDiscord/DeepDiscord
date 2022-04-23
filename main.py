@@ -9,6 +9,8 @@ load_dotenv('bot/.env.txt')
 
 app = Flask(__name__)
 
+
+
 # For testing, this is a fake database of valid auth tokens
 # Note to self, take this out before production
 
@@ -17,7 +19,10 @@ port = os.getenv("PORT")
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    if os.getenv("PRODUCTION") == "false":
+        return render_template("preview.html")
+    else:
+        return render_template("index.html")
 
 @app.route("/api/submit", methods=['POST'])
 def api():
