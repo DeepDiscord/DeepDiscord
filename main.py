@@ -51,7 +51,7 @@ def invite(invite):
         pre_baked_json = {"name": name, "members": count, "isNSFW": nsfw} # add icon for guild/server in a future update
         return Response(json.dumps(pre_baked_json), mimetype='application/json')
     except:
-        return Response(json.dumps({"error": "true", "http": http.status_code}), mimetype='application/json')
+        return Response(json.dumps({"error": "true", "http": http.status_code}), mimetype='application/json'), 400
 
 @app.route("/stats")
 def stats():

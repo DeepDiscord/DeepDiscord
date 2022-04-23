@@ -12,10 +12,12 @@
 
       I've asked a question about this on Stackoverflow.
       https://stackoverflow.com/q/71976299
+
+      Edit: Fixed. The solution was to use loop.index0.
+      This increases by one every time.
     -->
     {% for result in results %}
-      <p id="{{ results_raw[iteration] }}">{{ result }}</p> <br>
-      {% set iteration = iteration + 1 %}
+      <p id="{{ results_raw[loop.index0] }}">{{ result }}</p> <br>
     {% endfor %}
 
     {% for result_raw in results_raw %}
