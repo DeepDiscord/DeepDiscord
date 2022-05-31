@@ -4,7 +4,7 @@ Search Discord's "Deep Web"
 
 ## Setting up the .env.txt file
 
-Create a new .env.txt file in `bot/` by running `cp env.txt.example env.txt`. Edit this file by running and fill in the details. Here are what all of the details in the env mean:
+Create a new .env.txt file in `bot/` by running `cp .env.txt.example .env.txt`. Edit this file by running and fill in the details. Here are what all of the details in the env mean:
 
 * PORT - The port the web server will listen on
 * TOKEN - The token for the Discord bot
